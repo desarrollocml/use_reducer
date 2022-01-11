@@ -8,11 +8,11 @@ const types={
 
 const reducer = (state, action) => {
   switch(action.type){
-      case "increment":
+      case types.increment:
           return state+1;
-      case "decrement":
+      case types.decrement:
           return state-1;
-      case "reset":
+      case types.reset:
           return 0;
       default :
         return state;    
