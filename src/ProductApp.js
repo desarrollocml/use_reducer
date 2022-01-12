@@ -46,7 +46,7 @@ export default function ProductApp() {
       <ul>
         {cart.map((product) => (
           <li key={product.id}>
-            {product.title}
+            {product.title}- quantity : {product.quantity}
             <button
               onClick={() =>
                 dispatch({
