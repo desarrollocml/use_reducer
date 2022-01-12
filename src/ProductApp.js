@@ -50,12 +50,22 @@ export default function ProductApp() {
             <button
               onClick={() =>
                 dispatch({
+                  type: types.productRemoveOneFromCart,
+                  payload: product.id,
+                })
+              }
+            >
+              Remove One
+            </button>
+            <button
+              onClick={() =>
+                dispatch({
                   type: types.productRemoveFromCart,
                   payload: product.id,
                 })
               }
             >
-              Remove from Cart
+              Remove All
             </button>
           </li>
         ))}
