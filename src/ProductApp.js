@@ -30,11 +30,15 @@ export default function ProductApp() {
               Show
             </button>
             <button
-                onClick={()=>dispatch({
-                    type: types.productAddToCart,
-                    payload:product
-                })}
-            >Add to cart</button>
+              onClick={() =>
+                dispatch({
+                  type: types.productAddToCart,
+                  payload: product,
+                })
+              }
+            >
+              Add to cart
+            </button>
           </li>
         ))}
       </ul>
@@ -43,12 +47,21 @@ export default function ProductApp() {
         {cart.map((product) => (
           <li key={product.id}>
             {product.title}
-            <button>Remove from Cart</button>
+            <button
+              onClick={() =>
+                dispatch({
+                  type: types.productRemoveFromCart,
+                  payload: product.id,
+                })
+              }
+            >
+              Remove from Cart
+            </button>
           </li>
         ))}
       </ul>
-      <h2>Preview</h2>            
-            <p>{activeProduct.title}</p>
+      <h2>Preview</h2>
+      <p>{activeProduct.title}</p>
     </div>
   );
 }
