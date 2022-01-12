@@ -18,6 +18,14 @@ const productReducer = (state, action) => {
               ...state,
               activeProduct: action.payload
           }
+      case types.productAddToCart:
+          return  {
+              ...state,
+              cart:[
+                   ...state.cart,
+                    action.payload
+              ]
+          }
       default:
         return state;
   }

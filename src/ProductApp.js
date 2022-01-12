@@ -29,7 +29,12 @@ export default function ProductApp() {
             >
               Show
             </button>
-            <button>Add to cart</button>
+            <button
+                onClick={()=>dispatch({
+                    type: types.productAddToCart,
+                    payload:product
+                })}
+            >Add to cart</button>
           </li>
         ))}
       </ul>
